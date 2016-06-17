@@ -1,0 +1,7 @@
+TopRule = $* (
+            logic {album = 'luoji-239463'} |
+            (science | science-fiction) {album = 'santi-248611'} |
+            (ghost | scary) {album = 'gui-2808581'} |
+            (fun | funny) {album = 'qiubai-200849'} |
+            crosstalk {album = 'guodegang-61'}
+            ) $*;

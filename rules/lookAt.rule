@@ -1,0 +1,4 @@
+TopRule = $*(
+    $look{todo='look'}
+) $*;
+look = look | looking | watch | find | watching;

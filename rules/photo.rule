@@ -1,0 +1,4 @@
+TopRule = $*(
+    $photo{todo='photo'}
+) $*;
+photo = picture | photo | shoot;

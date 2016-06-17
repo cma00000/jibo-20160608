@@ -1,0 +1,4 @@
+TopRule = $*(
+    $run{todo='run'}
+) $*;
+run = (run | roll | start | begin | again | draw | give me a number);

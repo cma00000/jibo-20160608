@@ -1,0 +1,546 @@
+{
+    "1": {
+        "id": 1,
+        "class": "Sequence",
+        "name": "",
+        "options": {},
+        "children": [
+            "006e7fd3-6178-47e6-bac9-cf6a2e9cd0b0",
+            "c2770b26-0a84-42e7-aa9b-5915f74c8d9d",
+            "3d701950-d01f-4f23-acb2-8dcda808736e",
+            "97b02257-f84c-4bc8-9571-459c73139c3d",
+            "d864decf-f59d-414a-b399-311c237a349c",
+            "24e6d96e-4387-4e5f-8742-42c3c8f20146",
+            "cc95ed2e-a2ea-43a4-8cfb-5132076f3283",
+            "7717a3c8-52d1-4700-91d3-80fab1df89c9"
+        ]
+    },
+    "meta": {
+        "version": 1
+    },
+    "006e7fd3-6178-47e6-bac9-cf6a2e9cd0b0": {
+        "id": "006e7fd3-6178-47e6-bac9-cf6a2e9cd0b0",
+        "class": "Subtree",
+        "name": "",
+        "options": {
+            "behaviorPath": "idle.bt",
+            "getNotepad": [
+                "() => {",
+                "    return {};",
+                "}"
+            ],
+            "onResult": [
+                "(treeResult) => {",
+                "}"
+            ]
+        },
+        "asset-pack": "core",
+        "parent": 1,
+        "decorators": [
+            "d457646b-7f3f-4afc-ac09-28791d78d6a4"
+        ]
+    },
+    "d457646b-7f3f-4afc-ac09-28791d78d6a4": {
+        "id": "d457646b-7f3f-4afc-ac09-28791d78d6a4",
+        "class": "SucceedOnEmbedded",
+        "name": "",
+        "options": {
+            "rule": "hey_jibo",
+            "onResult": [
+                "(listener) => {",
+                "\tlistener.on('hey-jibo', function(asrResult, speakerIds) {",
+                "",
+                "\t});",
+                "}"
+            ]
+        },
+        "asset-pack": "core"
+    },
+    "c2770b26-0a84-42e7-aa9b-5915f74c8d9d": {
+        "id": "c2770b26-0a84-42e7-aa9b-5915f74c8d9d",
+        "class": "PlayAnimation",
+        "name": "",
+        "options": {
+            "animPath": "greeting-with-audio-event.keys",
+            "config": [
+                "(animation) => {",
+                "}"
+            ]
+        },
+        "asset-pack": "core",
+        "parent": 1
+    },
+    "3d701950-d01f-4f23-acb2-8dcda808736e": {
+        "id": "3d701950-d01f-4f23-acb2-8dcda808736e",
+        "class": "TextToSpeechJs",
+        "name": "",
+        "options": {
+            "getWords": [
+                "(callback) => {",
+                "    let responses = [",
+                "      \"Hey there. what I can do for you?\",",
+                "      \"Whats up? How can I help you?\",",
+                "      \"Hi there. Do you need help\" ",
+                "    ];",
+                "    let index = Math.round(Math.random() * (responses.length - 1));",
+                "    callback(responses[index]);",
+                "}"
+            ],
+            "onWord": [
+                "(word) => {",
+                "}"
+            ]
+        },
+        "asset-pack": "core",
+        "parent": 1
+    },
+    "97b02257-f84c-4bc8-9571-459c73139c3d": {
+        "id": "97b02257-f84c-4bc8-9571-459c73139c3d",
+        "class": "Parallel",
+        "name": "",
+        "options": {
+            "succeedOnOne": false
+        },
+        "asset-pack": "core",
+        "parent": 1,
+        "decorators": [
+            "271c4b98-180f-40a7-9b92-38c2db0860fa"
+        ],
+        "children": [
+            "487e9513-5027-40fa-92dc-36e6a49f25f8",
+            "a12d81bc-2cfd-431a-a958-5abee5a09775"
+        ]
+    },
+    "271c4b98-180f-40a7-9b92-38c2db0860fa": {
+        "id": "271c4b98-180f-40a7-9b92-38c2db0860fa",
+        "class": "SucceedOnEmbedded",
+        "name": "",
+        "options": {
+            "rule": "hey_jibo",
+            "onResult": [
+                "(listener) => {",
+                "\tlistener.on('hey-jibo', function(asrResult, speakerIds) {",
+                "",
+                "\t});",
+                "}"
+            ]
+        },
+        "asset-pack": "core"
+    },
+    "487e9513-5027-40fa-92dc-36e6a49f25f8": {
+        "id": "487e9513-5027-40fa-92dc-36e6a49f25f8",
+        "class": "Sequence",
+        "name": "",
+        "options": {},
+        "asset-pack": "core",
+        "parent": "97b02257-f84c-4bc8-9571-459c73139c3d",
+        "decorators": [
+            "daeb252a-ba92-4865-9af9-f6bd506ec541"
+        ],
+        "children": [
+            "282e16f1-af3a-466b-95d0-0d22390e7087",
+            "1a9217bd-4d23-4c5d-8283-252424150573"
+        ]
+    },
+    "daeb252a-ba92-4865-9af9-f6bd506ec541": {
+        "id": "daeb252a-ba92-4865-9af9-f6bd506ec541",
+        "class": "WhileCondition",
+        "name": "",
+        "options": {
+            "init": [
+                "() => {",
+                "}"
+            ],
+            "conditional": [
+                "() => {",
+                "    return true;",
+                "}"
+            ]
+        },
+        "asset-pack": "core"
+    },
+    "282e16f1-af3a-466b-95d0-0d22390e7087": {
+        "id": "282e16f1-af3a-466b-95d0-0d22390e7087",
+        "class": "Listen",
+        "name": "",
+        "options": {
+            "getOptions": [
+                "() => {",
+                "    let options = {",
+                "        heyJibo: false,",
+                "        detectEnd: true,",
+                "        incremental: true,",
+                "        authenticateSpeaker: ''",
+                "    }",
+                "    return options;",
+                "}"
+            ],
+            "rule": "photo.rule",
+            "onResult": [
+                "(listener) => {",
+                "    listener.on('cloud', function(asrResult, speakerIds) {",
+                "      console.log(asrResult);",
+                "      notepad.results = asrResult.NLParse;",
+                "    });",
+                "}"
+            ]
+        },
+        "asset-pack": "core",
+        "parent": "487e9513-5027-40fa-92dc-36e6a49f25f8"
+    },
+    "1a9217bd-4d23-4c5d-8283-252424150573": {
+        "id": "1a9217bd-4d23-4c5d-8283-252424150573",
+        "class": "Switch",
+        "name": "",
+        "options": {},
+        "asset-pack": "core",
+        "parent": "487e9513-5027-40fa-92dc-36e6a49f25f8",
+        "children": [
+            "2929796c-4976-48c3-aaf4-bb735abb3791",
+            "079fbd3c-22fe-4578-99a1-1125fa099cd8"
+        ]
+    },
+    "2929796c-4976-48c3-aaf4-bb735abb3791": {
+        "id": "2929796c-4976-48c3-aaf4-bb735abb3791",
+        "class": "TextToSpeech",
+        "name": "",
+        "options": {
+            "words": "Sorry didn't understand that.",
+            "onWord": [
+                "(word) => {",
+                "}"
+            ]
+        },
+        "asset-pack": "core",
+        "parent": "1a9217bd-4d23-4c5d-8283-252424150573",
+        "decorators": [
+            "88d8fe22-7d6e-4ecd-90f5-9019e3a13b25"
+        ]
+    },
+    "079fbd3c-22fe-4578-99a1-1125fa099cd8": {
+        "id": "079fbd3c-22fe-4578-99a1-1125fa099cd8",
+        "class": "Sequence",
+        "name": "",
+        "options": {},
+        "asset-pack": "core",
+        "parent": "1a9217bd-4d23-4c5d-8283-252424150573",
+        "children": [
+            "e5417d03-e6c5-493c-a26a-4d0176cc3de0",
+            "01a93d85-1e2e-470b-a2dd-9f86588c0cdc",
+            "31989a48-6905-4c17-b821-10e1f2feba3b"
+        ],
+        "decorators": [
+            "4f5107fd-db42-4f9f-b6f7-6536f0de5c04"
+        ]
+    },
+    "e5417d03-e6c5-493c-a26a-4d0176cc3de0": {
+        "id": "e5417d03-e6c5-493c-a26a-4d0176cc3de0",
+        "class": "TextToSpeech",
+        "name": "",
+        "options": {
+            "words": "My pleasure. When you are ready Say cheese!",
+            "onWord": [
+                "(word) => {",
+                "}"
+            ]
+        },
+        "asset-pack": "core",
+        "parent": "079fbd3c-22fe-4578-99a1-1125fa099cd8",
+        "decorators": []
+    },
+    "01a93d85-1e2e-470b-a2dd-9f86588c0cdc": {
+        "id": "01a93d85-1e2e-470b-a2dd-9f86588c0cdc",
+        "class": "PlayAnimation",
+        "name": "",
+        "options": {
+            "animPath": "prepareShoot.keys",
+            "config": [
+                "(animation) => {",
+                "}"
+            ]
+        },
+        "asset-pack": "core",
+        "parent": "079fbd3c-22fe-4578-99a1-1125fa099cd8"
+    },
+    "88d8fe22-7d6e-4ecd-90f5-9019e3a13b25": {
+        "id": "88d8fe22-7d6e-4ecd-90f5-9019e3a13b25",
+        "class": "Case",
+        "name": "",
+        "options": {
+            "conditional": [
+                "() => {",
+                "  console.log(notepad.results + 'woxiede');",
+                "  return (notepad.results && notepad.results.todo == undefined);",
+                "}"
+            ]
+        },
+        "asset-pack": "core"
+    },
+    "4f5107fd-db42-4f9f-b6f7-6536f0de5c04": {
+        "id": "4f5107fd-db42-4f9f-b6f7-6536f0de5c04",
+        "class": "Case",
+        "name": "",
+        "options": {
+            "conditional": [
+                "() => {",
+                "  return notepad.results && notepad.results.todo == \"photo\";",
+                "}"
+            ]
+        },
+        "asset-pack": "core"
+    },
+    "31989a48-6905-4c17-b821-10e1f2feba3b": {
+        "id": "31989a48-6905-4c17-b821-10e1f2feba3b",
+        "class": "Sequence",
+        "name": "",
+        "options": {},
+        "asset-pack": "core",
+        "parent": "079fbd3c-22fe-4578-99a1-1125fa099cd8",
+        "decorators": [
+            "458fa4eb-df57-40e4-9573-0aa7a7f58d75"
+        ],
+        "children": [
+            "db598075-2f1f-415b-81df-a160f0f68f8d",
+            "4a41c85d-6aa4-41eb-aa26-5f2e31021010"
+        ]
+    },
+    "458fa4eb-df57-40e4-9573-0aa7a7f58d75": {
+        "id": "458fa4eb-df57-40e4-9573-0aa7a7f58d75",
+        "class": "WhileCondition",
+        "name": "",
+        "options": {
+            "init": [
+                "() => {",
+                "}"
+            ],
+            "conditional": [
+                "() => {",
+                "    return true;",
+                "}"
+            ]
+        },
+        "asset-pack": "core"
+    },
+    "db598075-2f1f-415b-81df-a160f0f68f8d": {
+        "id": "db598075-2f1f-415b-81df-a160f0f68f8d",
+        "class": "Listen",
+        "name": "",
+        "options": {
+            "getOptions": [
+                "() => {",
+                "    let options = {",
+                "        heyJibo: false,",
+                "        detectEnd: true,",
+                "        incremental: true,",
+                "        authenticateSpeaker: ''",
+                "    }",
+                "    return options;",
+                "}"
+            ],
+            "rule": "cheese.rule",
+            "onResult": [
+                "(listener) => {",
+                "    listener.on('cloud', function(asrResult, speakerIds) {",
+                "      console.log(asrResult);",
+                "      notepad.results = asrResult.NLParse;",
+                "    });",
+                "}"
+            ]
+        },
+        "asset-pack": "core",
+        "parent": "31989a48-6905-4c17-b821-10e1f2feba3b"
+    },
+    "4a41c85d-6aa4-41eb-aa26-5f2e31021010": {
+        "id": "4a41c85d-6aa4-41eb-aa26-5f2e31021010",
+        "class": "Switch",
+        "name": "",
+        "options": {},
+        "asset-pack": "core",
+        "parent": "31989a48-6905-4c17-b821-10e1f2feba3b",
+        "children": [
+            "e2544c66-b11e-4fe5-a79a-c23d4851bf07",
+            "cfd76113-e128-4ce2-b3a6-892c877fdc3f"
+        ]
+    },
+    "cfd76113-e128-4ce2-b3a6-892c877fdc3f": {
+        "id": "cfd76113-e128-4ce2-b3a6-892c877fdc3f",
+        "class": "Sequence",
+        "name": "",
+        "options": {},
+        "asset-pack": "core",
+        "parent": "4a41c85d-6aa4-41eb-aa26-5f2e31021010",
+        "decorators": [
+            "d6dc82f6-0eb8-4ace-bcbe-c6016be3f728"
+        ],
+        "children": [
+            "6ff0afad-df06-4bff-9f70-5d4b2be397a0",
+            "787c2b65-8207-49fb-8627-4ce0da40f940"
+        ]
+    },
+    "d6dc82f6-0eb8-4ace-bcbe-c6016be3f728": {
+        "id": "d6dc82f6-0eb8-4ace-bcbe-c6016be3f728",
+        "class": "Case",
+        "name": "",
+        "options": {
+            "conditional": [
+                "() => {",
+                "  return notepad.results && notepad.results.cheese == \"yes\";",
+                "}"
+            ]
+        },
+        "asset-pack": "core"
+    },
+    "6ff0afad-df06-4bff-9f70-5d4b2be397a0": {
+        "id": "6ff0afad-df06-4bff-9f70-5d4b2be397a0",
+        "class": "PlayAnimation",
+        "name": "",
+        "options": {
+            "animPath": "sayCheese.keys",
+            "config": [
+                "(animation) => {",
+                "}"
+            ]
+        },
+        "asset-pack": "core",
+        "parent": "cfd76113-e128-4ce2-b3a6-892c877fdc3f"
+    },
+    "e2544c66-b11e-4fe5-a79a-c23d4851bf07": {
+        "id": "e2544c66-b11e-4fe5-a79a-c23d4851bf07",
+        "class": "TextToSpeech",
+        "name": "",
+        "options": {
+            "words": "Not a good smile, more cheese!",
+            "onWord": [
+                "(word) => {",
+                "}"
+            ]
+        },
+        "asset-pack": "core",
+        "parent": "4a41c85d-6aa4-41eb-aa26-5f2e31021010",
+        "decorators": [
+            "599a9b1c-d4f8-4161-ae73-d437e25875a4"
+        ]
+    },
+    "599a9b1c-d4f8-4161-ae73-d437e25875a4": {
+        "id": "599a9b1c-d4f8-4161-ae73-d437e25875a4",
+        "class": "Case",
+        "name": "",
+        "options": {
+            "conditional": [
+                "() => {",
+                "  return (notepad.results == undefined);",
+                "}"
+            ]
+        },
+        "asset-pack": "core"
+    },
+    "a12d81bc-2cfd-431a-a958-5abee5a09775": {
+        "id": "a12d81bc-2cfd-431a-a958-5abee5a09775",
+        "class": "Subtree",
+        "name": "",
+        "options": {
+            "behaviorPath": "19-lps.bt",
+            "getNotepad": [
+                "() => {",
+                "    return {};",
+                "}"
+            ],
+            "onResult": [
+                "(treeResult) => {",
+                "}"
+            ]
+        },
+        "asset-pack": "core",
+        "parent": "97b02257-f84c-4bc8-9571-459c73139c3d"
+    },
+    "d864decf-f59d-414a-b399-311c237a349c": {
+        "id": "d864decf-f59d-414a-b399-311c237a349c",
+        "class": "PlayAnimation",
+        "name": "",
+        "options": {
+            "animPath": "dance.keys",
+            "config": [
+                "(animation) => {",
+                "}"
+            ]
+        },
+        "asset-pack": "core",
+        "parent": 1
+    },
+    "24e6d96e-4387-4e5f-8742-42c3c8f20146": {
+        "id": "24e6d96e-4387-4e5f-8742-42c3c8f20146",
+        "class": "TextToSpeech",
+        "name": "",
+        "options": {
+            "words": "ni hao wo jiao jibo. \nwo jone wen bu hao.\nLet me introduce myself with a youtube video.",
+            "onWord": [
+                "(word) => {",
+                "}"
+            ]
+        },
+        "asset-pack": "core",
+        "parent": 1
+    },
+    "cc95ed2e-a2ea-43a4-8cfb-5132076f3283": {
+        "id": "cc95ed2e-a2ea-43a4-8cfb-5132076f3283",
+        "class": "PlayAnimation",
+        "name": "",
+        "options": {
+            "animPath": "loading.keys",
+            "config": [
+                "(animation) => {",
+                "}"
+            ]
+        },
+        "asset-pack": "core",
+        "parent": 1
+    },
+    "7717a3c8-52d1-4700-91d3-80fab1df89c9": {
+        "id": "7717a3c8-52d1-4700-91d3-80fab1df89c9",
+        "class": "ExecuteScript",
+        "name": "",
+        "options": {
+            "exec": [
+                "() => {",
+                "  jibo.face.visible = false;",
+                "  window.open(\"https://www.youtube.com/watch?v=3N1Q8oFpX1Y\",\"_top\",\"width=1280,height=720\");",
+                "  //window.open(\"http://html5piano.ilinov.eu\",\"_top\",\"resizable=yes,width=1280,height=720\");",
+                "  //window.open(\"http://labs.nikrowell.com/lightsandmotion/ultraviolet/\",\"_top\");",
+                "}"
+            ]
+        },
+        "asset-pack": "core",
+        "parent": 1
+    },
+    "787c2b65-8207-49fb-8627-4ce0da40f940": {
+        "id": "787c2b65-8207-49fb-8627-4ce0da40f940",
+        "class": "TakePhoto",
+        "name": "",
+        "options": {
+            "resolution": 2,
+            "onPhoto": [
+                "(error, imageUrl) => {",
+                "  if(!error) {",
+                "    let eye = document.getElementById('eye');",
+                "    let img = new Image(document.body.clientWidth,document.body.clientHeight);",
+                "    img.src = '';",
+                "    img.style.display = '';",
+                "",
+                "    console.log(document.body.innerHTML);",
+                "    img.src = imageUrl;",
+                "    document.body.innerHTML = '<img src='+img.src+'>';",
+                "",
+                "    console.log(document.body.innerHTML);",
+                "  }",
+                "  else {",
+                "      console.error(error);",
+                "  }",
+                "  ",
+                "}"
+            ],
+            "noDistortion": true
+        },
+        "asset-pack": "core",
+        "parent": "cfd76113-e128-4ce2-b3a6-892c877fdc3f"
+    }
+}
